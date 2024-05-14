@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json.schemastore.org/template",
+	"author": "Digitzone",
+	"name": "Minimal API Opiniated Boilerplate",
+	"description": "A project for creating a minimal opiniated web api",
+	"identity": "Digitzone.MinimalApi.1.0",
+	"shortName": "minimalapi",
+	"tags": {
+		"language": "C#",
+		"type": "project"
+	},
+	"sourceName": "MinimalApiTemplate",
+	"symbols": {
+		"Framework": {
+			"type": "parameter",
+			"description": "The target framework for the project.",
+			"datatype": "choice",
+			"choices": [
+				{
+					"choice": "net8.0"
+				},
+				{
+					"choice": "net7.0"
+				}
+			],
+			"defaultValue": "net8.0"
+		}
+	},
+	"classifications": ["MinimalApi", "AspNetCore"]
+}
