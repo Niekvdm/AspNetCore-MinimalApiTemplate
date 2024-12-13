@@ -10,9 +10,7 @@ public static class ConfigureServices
     public static void AddServices(this WebApplicationBuilder builder)
     {
         builder.AddSerilog();
-        builder.AddSwagger();
-        builder.AddAutoMapper();
-        builder.Services.AddValidatorsFromAssembly(typeof(ConfigureServices).Assembly);
+        builder.AddOpenApi();
         builder.AddCors();
         builder.AddAuthorization();
 
@@ -46,16 +44,10 @@ public static class ConfigureServices
         );
     }
 
-    private static void AddSwagger(this WebApplicationBuilder builder)
+    private static void AddOpenApi(this WebApplicationBuilder builder)
     {
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen(
-            options =>
-            {
-                options.CustomSchemaIds(type => type.FullName?.Replace('+', '.'));
-                options.InferSecuritySchemes();
-            }
-        );
+        builder.Services.AddOpenApi();
     }
 
     private static void AddSerilog(this WebApplicationBuilder builder)
